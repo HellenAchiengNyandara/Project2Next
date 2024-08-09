@@ -1,9 +1,10 @@
 import React from 'react'
-import UserInfo from '../components/userInfo'
+import HeroSection from './heroSection'
 export default function page() {
   return (
     <div>
-        <UserInfo/>
+      <HeroSection/>
+        
     </div>
   )
 }

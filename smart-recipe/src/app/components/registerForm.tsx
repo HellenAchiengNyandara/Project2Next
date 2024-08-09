@@ -10,7 +10,7 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
@@ -18,14 +18,25 @@ export default function RegisterForm() {
       return;
     }
 
-    // Perform form submission logic here
-    console.log({ name, email, password });
+    try {
+      const res = await fetch('/api/register', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-    // Reset form fields and error after successful submission
-    setName("");
-    setEmail("");
-    setPassword("");
-    setError("");
+      if (res.ok) {
+        const form = e.target;
+        form.reset();
+        setError(""); 
+      } else {
+        setError("User registration failed");
+      }
+    } catch (error) {
+      setError("An error occurred while registering");
+    }
   };
 
   return (
@@ -45,7 +56,6 @@ export default function RegisterForm() {
                 onChange={(e) => setName(e.target.value)}
                 className="w-full p-4 rounded-lg bg-[#0E3B2A] text-white placeholder-gray-400 border border-[#4A524F] outline-none"
                 placeholder="Name"
-              
               />
               <input
                 type="email"
@@ -53,7 +63,6 @@ export default function RegisterForm() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-4 rounded-lg bg-[#0E3B2A] text-white placeholder-gray-400 border border-[#4A524F] outline-none"
                 placeholder="Email"
-              
               />
               <input
                 type="password"
@@ -61,7 +70,6 @@ export default function RegisterForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-4 rounded-lg bg-[#0E3B2A] text-white placeholder-gray-400 border border-[#4A524F] outline-none"
                 placeholder="Password"
-          
               />
               <button
                 type="submit"
