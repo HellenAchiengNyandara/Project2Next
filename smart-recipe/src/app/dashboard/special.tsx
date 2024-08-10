@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import food1 from '../../../public/images/food1.jpeg';
 import Link from 'next/link'; 
 
-export default function HeroSection() {
+export default function Special() {
   return (
     <div className="p-5">
       <div className="mb-10">
@@ -139,7 +139,12 @@ export default function HeroSection() {
         </Card>
         {/* Add more Cards as needed */}
       </div>
-      <div className='bg-red-500 py-2 mt-2 flex-auto w-1/3 place-items-center mt-2 p-4'><button>LOGOUT</button></div>
+      <div className='bg-red-500 py-2 mt-2 flex-auto w-1/3 place-items-center mt-2 p-4'><button>LOGOUT
+      <Link href="/login">
+            
+          </Link></button>
+          </div>
+    
     </div>
   );
 }
