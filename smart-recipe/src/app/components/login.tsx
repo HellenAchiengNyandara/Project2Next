@@ -7,7 +7,7 @@ export default function RegisterForm() {
     <div className="flex flex-col min-h-screen bg-[#0E3B2A]">
       <div className="flex-grow flex items-center justify-center p-6">
         <div className="max-w-sm w-full">
-          <div className='text-lg text-white semibold'><p><i>Find You favorite dish with Smarty</i></p></div>
+          <div className='text-lg text-white semibold'><h1 className="text-4xl font-bold text-white-800">Find You favorite dish with Smarty</h1></div>
           <Card className="shadow-lg rounded-lg p-6 bg-[#0E3B2A] border border-[#4A524F]">
             <form className="space-y-4">
               

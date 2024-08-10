@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import food1 from '../../../public/images/food1.jpeg';
 import Link from 'next/link'; 
-
+import { MdFreeBreakfast } from "react-icons/md";
 export default function Special() {
   return (
     <div className="p-5">
@@ -23,7 +23,7 @@ export default function Special() {
       </div>
 
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4 mb-10">
-      <Link href="/special" passHref>
+        <Link href="/special" passHref>
           <Card className="shadow-md rounded-md bg-white text-center cursor-pointer">
             <CardHeader>
               <CardTitle className="text-green-800">Special</CardTitle>
@@ -31,13 +31,14 @@ export default function Special() {
           </Card>
         </Link>   
 
-          <Link href="/breakfast" passHref>
-          <Card className="shadow-md rounded-md bg-white text-center">
-          <CardHeader>
-            <CardTitle className="text-green-800">Breakfast</CardTitle>
-          </CardHeader>
-        </Card>
+        <Link href="/breakfast" passHref>
+          <Card className="shadow-md rounded-md bg-white text-center cursor-pointer">
+            <CardHeader>
+              <CardTitle className="text-green-800"><MdFreeBreakfast />Breakfast</CardTitle>
+            </CardHeader>
+          </Card>
         </Link>
+
         <Card className="shadow-md rounded-md bg-white text-center">
           <CardHeader>
             <CardTitle className="text-green-800">Lunch</CardTitle>
@@ -66,84 +67,16 @@ export default function Special() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-md rounded-md bg-white">
-          <CardHeader>
-            <CardTitle>Fresh Tofu Salad</CardTitle>
-            <CardDescription>Crispy tofu, greens, veggies, and tangy sesame-ginger dressing.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Image src={food1} alt="Fresh Tofu Salad" width={100} height={100} />
-            <div className="flex justify-between mt-3">
-              <span>1h</span>
-              <span>Medium</span>
-              <span>470 kcal</span>
-              <div><button><i>Recipe</i></button></div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="shadow-md rounded-md bg-white">
-          <CardHeader>
-            <CardTitle>Fresh Tofu Salad</CardTitle>
-            <CardDescription>Crispy tofu, greens, veggies, and tangy sesame-ginger dressing.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Image src={food1} alt="Fresh Tofu Salad" width={100} height={100} />
-            <div className="flex justify-between mt-3">
-              <span>1h</span>
-              <span>Medium</span>
-              <span>470 kcal</span>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="shadow-md rounded-md bg-white">
-          <CardHeader>
-            <CardTitle>Fresh Tofu Salad</CardTitle>
-            <CardDescription>Crispy tofu, greens, veggies, and tangy sesame-ginger dressing.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Image src={food1} alt="Fresh Tofu Salad" width={100} height={100} />
-            <div className="flex justify-between mt-3">
-              <span>1h</span>
-              <span>Medium</span>
-              <span>470 kcal</span>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="shadow-md rounded-md bg-white">
-          <CardHeader>
-            <CardTitle>Fresh Tofu Salad</CardTitle>
-            <CardDescription>Crispy tofu, greens, veggies, and tangy sesame-ginger dressing.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Image src={food1} alt="Fresh Tofu Salad" width={100} height={100} />
-            <div className="flex justify-between mt-3">
-              <span>1h</span>
-              <span>Medium</span>
-              <span>470 kcal</span>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="shadow-md rounded-md bg-white">
-          <CardHeader>
-            <CardTitle>Fresh Tofu Salad</CardTitle>
-            <CardDescription>Crispy tofu, greens, veggies, and tangy sesame-ginger dressing.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Image src={food1} alt="Fresh Tofu Salad" width={100} height={100} />
-            <div className="flex justify-between mt-3">
-              <span>1h</span>
-              <span>Medium</span>
-              <span>470 kcal</span>
-            </div>
-          </CardContent>
-        </Card>
-        {/* Add more Cards as needed */}
+        {/* Additional Cards can be added here similarly */}
+        
       </div>
-      <div className='bg-red-500 py-2 mt-2 flex-auto w-1/3 place-items-center mt-2 p-4'><button>LOGOUT
-      <Link href="/login">
-            
-          </Link></button>
-          </div>
+      
+      {/* LOGOUT Button */}
+      <div className='bg-red-500 py-2  flex-auto w-1/3 place-items-center mt-2 p-4'>
+        <Link href="/login" passHref>
+          <button className="text-white">LOGOUT</button>
+        </Link>
+      </div>
     
     </div>
   );
