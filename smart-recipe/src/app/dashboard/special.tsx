@@ -67,11 +67,11 @@ export default function Special() {
           </CardContent>
         </Card>
 
-        {/* Additional Cards can be added here similarly */}
+        
         
       </div>
       
-      {/* LOGOUT Button */}
+      
       <div className='bg-red-500 py-2  flex-auto w-1/3 place-items-center mt-2 p-4'>
         <Link href="/login" passHref>
           <button className="text-white">LOGOUT</button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import Link from 'next/link';
-
+import { WiDirectionRight } from "react-icons/wi";
 export default function RegisterForm() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0E3B2A]">
@@ -25,13 +25,12 @@ export default function RegisterForm() {
               />
               <button
                 type="submit"
-                className="w-full bg-white text-[#0E3B2A] p-4 rounded-lg font-semibold hover:bg-gray-100 flex items-center justify-center"
+                className="w-full bg-white text-[#0E3B2A]  rounded-lg font-semibold hover:bg-gray-100 flex items-center justify-center p-4"
               >
-                Login
+                Explore the app<WiDirectionRight />
+
               </button>
-              <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-                Error message
-              </div>
+             
               
             </form>
           </Card>

@@ -10,7 +10,7 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; target: any; }) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
